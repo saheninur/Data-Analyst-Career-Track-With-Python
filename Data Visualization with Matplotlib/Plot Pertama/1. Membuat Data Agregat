@@ -5,5 +5,5 @@ dataset = pd.read_csv('https://storage.googleapis.com/dqlab-dataset/retail_raw_r
 dataset['order_month'] = dataset['order_date'].apply(lambda x: datetime.datetime.strptime(x, "%Y-%m-%d").strftime('%Y-%m'))
 dataset['gmv'] = dataset['item_price']*dataset['quantity']
 
-montly_amount = dataset.groupby('order_month')['gmv'].sum().reset_index()
-print(montly_amount)
+monthly_amount = dataset.groupby('order_month')['gmv'].sum().reset_index()
+print(monthly_amount)
